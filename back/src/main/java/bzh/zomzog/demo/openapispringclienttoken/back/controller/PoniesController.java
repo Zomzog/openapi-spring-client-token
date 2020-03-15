@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 import java.util.List;
 
+import static bzh.zomzog.demo.openapispringclienttoken.domain.api.Color.BLUE;
 import static java.util.Collections.singletonList;
 
 @RestController
@@ -21,7 +22,10 @@ public class PoniesController implements PoniesApi {
     public ResponseEntity<List<Pony>> _list(@Valid String name) {
         log.info("List ponies");
 
-        return ResponseEntity.ok(singletonList(new Pony().name("Rainbow Dash")));
+        return ResponseEntity.ok(singletonList(new Pony()
+                .id("1")
+                .name("Rainbow Dash")
+                .color(BLUE)));
     }
 
 
